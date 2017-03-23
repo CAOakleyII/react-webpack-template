@@ -1,0 +1,63 @@
+@import "./Branding.less";
+
+.spinner {
+  margin-left: auto;
+  margin-right: auto;
+  height: 28px;
+  width: 28px;
+  animation: rotate 0.8s infinite linear;
+  border: 2px solid #4285f4;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pull-right {
+  float:right;
+}
+.pull-left {
+  float:left;
+}
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one  */
+  display: flex;
+  align-items: center;
+  &.vh-50 {
+    min-height: 50%;
+    min-height: 50vh;
+  }
+  &.vh-75 {
+    min-height: 75%;
+    min-height: 75vh;
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+.align-center {
+  text-align: center;
+}
+
+.margin-top-5 {
+  margin-top: 5%;
+}
+.margin-top-10 {
+  margin-top: 10%;
+}
+
+.margin-top-15 {
+  margin-top: 15%;
+}
+.margin-top-20 {
+  margin-top: 20%;
+}
