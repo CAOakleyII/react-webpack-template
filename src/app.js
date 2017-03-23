@@ -12,3 +12,7 @@ render(
   <Root store={store} history={history} />,
    document.getElementById('react-content')
 )
+
+if (module.hot) {
+  module.hot.accept('./containers/App', () => { render(App) })
+}

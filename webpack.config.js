@@ -1,14 +1,16 @@
 var webpack = require('webpack');
 var path = require("path");
+var outputPath = path.resolve(__dirname, 'build');
+outputPath = outputPath.charAt(0).toUpperCase() + outputPath.slice(1);
 
 module.exports = {
-    context: '/repos/see-play',
     entry: [
+      'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:8080',
-      './src/app.js'
+      path.join(__dirname, 'src', 'app.js')
     ],
     output: {
-        path:  '/repos/see-play',
+        path: outputPath,
         filename: 'bundle.js',
     },
     plugins: [
@@ -26,8 +28,8 @@ module.exports = {
         rules: [
           {
               test: /\.jsx?$/,
-              use: ['react-hot-loader', 'babel-loader'],
-              include: '/repos/see-play/src',
+              exclude: '/node_modules/',
+              use: ['react-hot-loader/webpack', 'babel-loader']
           },
           {
               test: /\.less$/,
@@ -41,6 +43,6 @@ module.exports = {
     },
     devServer: {
       hot: true,
-      contentBase: './'
+      contentBase: 'build'
     }
 };
